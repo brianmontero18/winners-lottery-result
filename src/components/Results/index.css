@@ -1,0 +1,48 @@
+.lottoland-title {
+	border-bottom: 1px solid #d9deda;
+	margin-bottom: 21px;
+}
+.lottoland-title h1 {
+	margin-bottom: 10px;
+}
+.lottoland-eurojackpot-results {
+	padding: 14px 0;
+	line-height: 26px;
+	font-weight: 200;
+}
+.lottoland-results-numbers {
+	margin-bottom: 17px;
+	display: flex;
+	align-items: center;
+}
+.lottoland-plus-icon {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.circle {
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	color: #012406;
+	display: inline-block;
+	font-weight: bold;
+	line-height: 40px;
+	margin-right: 5px;
+	text-align: center;
+	width: 40px;
+}
+.lottoland-skeleton-circle {
+	height: 40px;
+	background-color: #ebeef2;
+	animation: pulse 0.65s infinite alternate;
+}
+
+@keyframes pulse {
+	0% {
+		opacity: 0.3;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

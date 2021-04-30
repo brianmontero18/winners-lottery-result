@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import Table from './components/Table';
+import Results from './components/Results';
+import SidePanel from './components/SidePanel';
+import useWinningNumbers from './hooks/useWinningNumbers';
+import { ReactComponent as LottolandLogo } from './assets/lottoland_logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default function App() {
+	const { data } = useWinningNumbers();
 
-export default App;
+	return (
+		<>
+			<header className="lottoland-header-container">
+				<a
+					href="/"
+					title="Play Lotto Online and win Millions at Lottoland.com"
+				>
+					<LottolandLogo className="lottoland-header-logo" />
+				</a>
+			</header>
+			<main className="lottoland-main-container">
+				<Results
+					date={data?.date}
+					numbers={data?.lotteryBalls?.numbers}
+					euroNumbers={data?.lotteryBalls?.euroNumbers}
+				/>
+				<section className="lottoland-details-container">
+					<Table data={data?.tableData} />
+					<SidePanel
+						date={data?.date}
+						number={data?.number}
+						time={data?.time}
+					/>
+				</section>
+			</main>
+		</>
+	);
+}

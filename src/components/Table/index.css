@@ -1,0 +1,89 @@
+@keyframes pulse {
+	0% {
+		background-position: 0% 0%;
+	}
+	100% {
+		background-position: -135% 0%;
+	}
+}
+.lottoland-table-container {
+	display: flex;
+	max-width: 100%;
+	overflow-y: scroll;
+	max-height: 573px;
+	min-height: 573px;
+	flex: 1 1 100%;
+}
+.lottoland-table-container::-webkit-scrollbar {
+	-webkit-appearance: none;
+}
+.lottoland-table-container::-webkit-scrollbar:horizontal {
+	height: 15px;
+}
+.lottoland-table-container::-webkit-scrollbar:vertical {
+	width: 12px;
+}
+.lottoland-table-container::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	border: 2px solid var(--white);
+	background-color: #d9deda;
+}
+.lottoland-table-container::-webkit-scrollbar-track {
+	background-color: var(--white);
+	border-radius: 8px;
+}
+.lottoland-table-container table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-bottom: 1px solid var(--line_border);
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.lottoland-table-container table th,
+.lottoland-table-container table td {
+	margin: 0;
+	padding: 21.5px 13px 21.5px 24px;
+	background-color: var(--white);
+	align-items: center;
+}
+.lottoland-table-container tr:hover td {
+	background-color: var(--hover_state);
+}
+.lottoland-table-container table thead tr,
+.lottoland-table-container table tbody tr {
+	border: 1px solid #d9deda;
+}
+.lottoland-table-container table thead th {
+	padding: 19px 13px 19px 24px;
+	text-align: left;
+	height: 52px;
+	position: sticky;
+	top: 0;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}
+.lottoland-table-body-text {
+	font-weight: 200;
+	font-size: 14px;
+	line-height: 20px;
+	color: var(--text_dark);
+}
+.lottoland-skeleton-line {
+	display: inline-block;
+	vertical-align: middle;
+	height: 60%;
+	width: 100%;
+	background: linear-gradient(
+		-90deg,
+		var(--grey_medium) 0%,
+		var(--grey_dark) 50%,
+		var(--grey_medium) 100%
+	);
+	background-size: 400% 400%;
+	animation: pulse 1.2s ease-in-out infinite;
+	width: 5.5em;
+	border-radius: 10px;
+}
+.lottoland-skeleton-line::before {
+	content: '\00a0';
+}

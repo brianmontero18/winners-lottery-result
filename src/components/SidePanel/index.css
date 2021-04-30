@@ -1,0 +1,22 @@
+.lottoland-results-container {
+	flex: 0 0 auto;
+	max-width: 300px;
+}
+.lottoland-side-panel-card {
+	padding: 21px;
+	margin-left: 28px;
+	border: 1px solid #d9deda;
+	border-left: none;
+	box-shadow: -7px 0 0 0 #69a507;
+	margin-bottom: 14px;
+}
+.lottoland-side-panel-card-title {
+	font-size: 17px;
+	line-height: 26px;
+	font-weight: 200;
+}
+.lottoland-side-panel-card-text {
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: 200;
+}
