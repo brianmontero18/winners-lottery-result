@@ -1,11 +1,3 @@
-@keyframes pulse {
-	0% {
-		background-position: 0% 0%;
-	}
-	100% {
-		background-position: -135% 0%;
-	}
-}
 .lottoland-table-container {
 	display: flex;
 	max-width: 100%;
@@ -67,23 +59,4 @@
 	font-size: 14px;
 	line-height: 20px;
 	color: var(--text_dark);
-}
-.lottoland-skeleton-line {
-	display: inline-block;
-	vertical-align: middle;
-	height: 60%;
-	width: 100%;
-	background: linear-gradient(
-		-90deg,
-		var(--grey_medium) 0%,
-		var(--grey_dark) 50%,
-		var(--grey_medium) 100%
-	);
-	background-size: 400% 400%;
-	animation: pulse 1.2s ease-in-out infinite;
-	width: 5.5em;
-	border-radius: 10px;
-}
-.lottoland-skeleton-line::before {
-	content: '\00a0';
 }

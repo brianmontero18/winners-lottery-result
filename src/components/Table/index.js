@@ -1,4 +1,4 @@
-import { useIsFetching } from 'react-query';
+import { useIsFetchingWinningNumbers } from '../../hooks/useWinningNumbers';
 import { useTable } from 'react-table';
 import './index.css';
 
@@ -6,7 +6,7 @@ const defaultGetRowId = (row) => row.tier;
 const defaultData = [];
 
 export default function Table({ data = defaultData }) {
-	const isFetching = useIsFetching(['result-winning-numbers']);
+	const isFetching = useIsFetchingWinningNumbers();
 
 	const {
 		getTableProps,

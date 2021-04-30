@@ -1,4 +1,4 @@
-import { useIsFetching } from 'react-query';
+import { useIsFetchingWinningNumbers } from '../../hooks/useWinningNumbers';
 import { ReactComponent as PlusIcon } from '../../assets/plus_icon.svg';
 import './index.css';
 
@@ -10,7 +10,7 @@ export default function Results({
 	numbers = defaultNumbers,
 	euroNumbers = defaultEuroNumbers,
 }) {
-	const isFetching = useIsFetching(['result-winning-numbers']);
+	const isFetching = useIsFetchingWinningNumbers();
 
 	return (
 		<>
@@ -35,7 +35,11 @@ export default function Results({
 				</div>
 				<div className="lottoland-results-numbers">
 					{numbers.map((num, i) => (
-						<LotteryBall key={`default-${i}`} value={num} />
+						<LotteryBall
+							key={`default-${i}`}
+							value={num}
+							isFetching={isFetching}
+						/>
 					))}
 					<PlusIcon className="lottoland-plus-icon" />
 					{euroNumbers.map((num, i) => (
@@ -43,6 +47,7 @@ export default function Results({
 							key={`euro-${i}`}
 							type="euro"
 							value={num}
+							isFetching={isFetching}
 						/>
 					))}
 				</div>
@@ -51,9 +56,7 @@ export default function Results({
 	);
 }
 
-function LotteryBall({ type = 'default', value }) {
-	const isFetching = useIsFetching(['result-winning-numbers']);
-
+function LotteryBall({ type = 'default', value, isFetching }) {
 	return (
 		<>
 			{isFetching ? (

@@ -1,13 +1,19 @@
-import { useQuery } from 'react-query';
+import { useQuery, useIsFetching } from 'react-query';
+
+const RESULT_WINNING_NUMBERS_KEY = 'result-winning-numbers';
 
 export default function useWinningNumbers() {
 	return useQuery({
-		queryKey: 'result-winning-numbers',
+		queryKey: RESULT_WINNING_NUMBERS_KEY,
 		queryFn,
 		select: getLastJackpotResult,
 		refetchOnWindowFocus: false,
 		notifyOnChangeProps: 'tracked',
 	});
+}
+
+export function useIsFetchingWinningNumbers() {
+	return useIsFetching([RESULT_WINNING_NUMBERS_KEY]);
 }
 
 async function queryFn() {
