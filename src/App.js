@@ -1,7 +1,7 @@
 import Table from './components/Table';
 import Results from './components/Results';
 import SidePanel from './components/SidePanel';
-import useWinningNumbers from './hooks/useWinningNumbers';
+import { useWinningNumbers } from './api';
 import { ReactComponent as LottolandLogo } from './assets/lottoland_logo.svg';
 import './App.css';
 

@@ -1,4 +1,4 @@
-import { useIsFetchingWinningNumbers } from '../../hooks/useWinningNumbers';
+import { useIsFetchingWinningNumbers } from '../../api';
 import { useTable } from 'react-table';
 import './index.css';
 
@@ -8,17 +8,12 @@ const defaultData = [];
 export default function Table({ data = defaultData }) {
 	const isFetching = useIsFetchingWinningNumbers();
 
-	const {
-		getTableProps,
-		getTableBodyProps,
-		headerGroups,
-		prepareRow,
-		rows,
-	} = useTable({
-		columns,
-		data,
-		getRowId: defaultGetRowId,
-	});
+	const { getTableProps, getTableBodyProps, headerGroups, prepareRow, rows } =
+		useTable({
+			columns,
+			data,
+			getRowId: defaultGetRowId,
+		});
 
 	return (
 		<div className="lottoland-table-container">

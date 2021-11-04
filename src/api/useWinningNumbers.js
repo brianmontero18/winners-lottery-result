@@ -2,7 +2,7 @@ import { useQuery, useIsFetching } from 'react-query';
 
 const RESULT_WINNING_NUMBERS_KEY = 'result-winning-numbers';
 
-export default function useWinningNumbers() {
+export function useWinningNumbers() {
 	return useQuery({
 		queryKey: RESULT_WINNING_NUMBERS_KEY,
 		queryFn,

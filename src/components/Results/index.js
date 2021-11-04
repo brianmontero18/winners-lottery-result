@@ -1,4 +1,4 @@
-import { useIsFetchingWinningNumbers } from '../../hooks/useWinningNumbers';
+import { useIsFetchingWinningNumbers } from '../../api';
 import { ReactComponent as PlusIcon } from '../../assets/plus_icon.svg';
 import './index.css';
 
